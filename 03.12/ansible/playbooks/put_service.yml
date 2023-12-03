@@ -1,0 +1,11 @@
+---
+- name: "Put Python App"
+  hosts: localhost
+  gather_facts: False
+  
+  tasks:
+    - name: "Put Python project"
+      shell: |
+        cp /app /common -r
+        ls -a /app
+
