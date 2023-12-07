@@ -12,7 +12,7 @@ import java.util.Comparator;
 import static org.junit.jupiter.api.Assertions.*;
 import static io.qameta.allure.SeverityLevel.*;
 
-public class GarageImplTests {
+class GarageImplTests {
     static ArrayList<Owner> owners = new ArrayList<>();
 
     static ArrayList<Car> cars = new ArrayList<>();
