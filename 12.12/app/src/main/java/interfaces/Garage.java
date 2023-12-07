@@ -10,11 +10,6 @@ public interface Garage {
     Collection<Owner>  allCarsUniqueOwners();
 
     /**
-     * Complexity should be less than O(n)
-     */
-    Collection<Car> topThreeCarsByMaxVelocity();
-
-    /**
      * Complexity should be O(1)
      */
     Collection<Car> allCarsOfBrand(String brand);

@@ -12,9 +12,15 @@ public class CarTest {
     }
 
     @Test
-    void getBran() {
+    void getBrand() {
         Car car = new Car(1, "a", "b", 1, 2, 3);
         assertEquals("a", car.getBrand());
+    }
+
+    @Test
+    void getModelName() {
+        Car car = new Car(1, "a", "b", 1, 2, 3);
+        assertEquals("b", car.getModelName());
     }
 
     @Test

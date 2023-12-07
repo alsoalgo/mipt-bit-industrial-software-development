@@ -63,16 +63,6 @@ public class GarageImplTests {
         return res;
     }
 
-    void assertTopThreeCarsByMaxVelocity(GarageImpl garage, int[] expectedCarIds) {
-        ArrayList<Car> expectedCars = new ArrayList<>();
-        for (int carId : expectedCarIds) {
-            expectedCars.add(cars.get(carId - 1));
-        }
-
-        ArrayList<Car> topThreeCars = (ArrayList<Car>) garage.topThreeCarsByMaxVelocity();
-        assertEquals(expectedCars, topThreeCars);
-    }
-
     @Test
     @SuppressWarnings("unused")
     void allCarsUniqueOwners() {
@@ -95,22 +85,6 @@ public class GarageImplTests {
                     expectedOwners(new int[]{1, 2, 3, 4, 5}).toArray(),
                     whenOwners.stream().sorted(Comparator.comparing(Owner::getAge)).toArray()
             );
-        }
-    }
-
-    @Test
-    void topThreeCarsByMaxVelocity() {
-        final GarageImpl garage;
-        GIVEN: {
-            garage = new GarageImpl();
-
-            for (Car car : cars) {
-                garage.addNewCar(car, owners.get(car.getOwnerId() - 1));
-            }
-        }
-        WHEN: {}
-        THEN: {
-            assertTopThreeCarsByMaxVelocity(garage, new int[]{10, 9, 8});
         }
     }
 
@@ -157,6 +131,11 @@ public class GarageImplTests {
     @Test
     void meanOwnersAgeOfCarBrand() {
         GarageImpl garage = new GarageImpl();
+        assertEquals(
+                0,
+                garage.meanOwnersAgeOfCarBrand("a")
+        );
+
         for (Car car : cars) {
             garage.addNewCar(car, owners.get(car.getOwnerId() - 1));
         }
@@ -170,6 +149,11 @@ public class GarageImplTests {
     @Test
     void meanCarNumberForEachOwner() {
         GarageImpl garage = new GarageImpl();
+        assertEquals(
+                0,
+                garage.meanCarNumberForEachOwner()
+        );
+
         for (Car car : cars) {
             garage.addNewCar(car, owners.get(car.getOwnerId() - 1));
         }

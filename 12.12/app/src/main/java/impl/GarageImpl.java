@@ -32,19 +32,6 @@ public class GarageImpl implements Garage {
     }
 
     @Override
-    public Collection<Car> topThreeCarsByMaxVelocity() {
-        if (carsSortedByMaxVelocity.isEmpty()) {
-            return Collections.emptyList();
-        }
-        ArrayList<Car> topThreeCars = new ArrayList<>();
-        Iterator<Car> it = carsSortedByMaxVelocity.descendingIterator();
-        for (int i = 0; it.hasNext() && i < 3; i++) {
-            topThreeCars.add(it.next());
-        }
-        return topThreeCars;
-    }
-
-    @Override
     public Collection<Car> allCarsOfBrand(String brand) {
         return brandToCars.getOrDefault(brand, emptyNavigableSet());
     }
