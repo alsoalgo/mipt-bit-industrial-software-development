@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CarTest {
     @Test
     void getCarId() {
-        Car car = new Car(1, "a", "b", 1, 2, 3);
-        assertEquals(1, car.getCarId());
+        Car car = new Car(2, "a", "b", 1, 2, 3);
+        assertEquals(2, car.getCarId());
     }
 
     @Test
