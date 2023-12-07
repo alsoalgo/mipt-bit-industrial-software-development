@@ -19,6 +19,7 @@
 С помощью `docker-compose up -d` поднял локально инстансы Jenkins и Sonarqube, настроил каждый.
 
 Поставил необходимые плагины - Docker, Allure, Sonarqube.
+![jenkins_installed_plugins](./images/jenkins_installed_plugins.jpg)
 
 В директории `app/` лежит приложение, которое собиралось.
 
@@ -34,6 +35,12 @@
 Настройки Sonarqube в Jenkins.
 IP-адрес получил с помощью команды `ifconfig`
 ![settings_sonarqube](./images/settings_sonarqube.jpg)
+
+Авторизационные токены в Sonarqube.
+![sonarqube_auth_tokens](./images/sonarqube_auth_tokens.jpg)
+
+Авторизационные токены в Jenkins.
+![jenkins_auth_tokens](./images/jenkins_auth_tokens.jpg)
 
 Про сам пайплайн.  
 Настройка git.
