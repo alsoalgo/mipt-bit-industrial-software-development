@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  manager:
+    container_name: manager
+    image: alsoalgo/manager
+    volumes:
+      - ./ansible:/ansible
+      - ./python-app:/app
+      - common-dir:/common
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - internal-net
+  
+  host:
+    container_name: host
+    image: alsoalgo/host
+    depends_on:
+      - manager
+    volumes:
+      - ./ansible:/ansible
+      - common-dir:/common
+      - /var/run/docker.sock:/var/run/docker.sock
+    expose:
+      - "3000"
+    networks:
+      - internal-net
+
+networks:
+  internal-net:
+    name: internal-net
+    external: true
+
+volumes:
+  common-dir:
+    external: true
+

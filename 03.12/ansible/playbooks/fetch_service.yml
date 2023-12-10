@@ -1,0 +1,11 @@
+---
+- name: "Fetch Python App"
+  hosts: localhost
+  gather_facts: False
+  
+  tasks:
+    - name: "Fetch Python App" 
+      shell: |
+        cp /common/app /app -r
+        ls -a /app
+

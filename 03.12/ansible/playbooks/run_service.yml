@@ -1,0 +1,14 @@
+---
+- name: "Run Python App"
+  hosts: localhost
+  gather_facts: False
+  
+  tasks:
+    - name: "Install Flask"
+      shell: |
+        python3 -m pip install flask
+
+    - name: "Run Python App"
+      shell: |
+        cd /app
+        python3 main.py &
